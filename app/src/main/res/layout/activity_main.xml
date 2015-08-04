@@ -8,9 +8,107 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".MainActivity">
 
-    <TextView
+    <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/app_name" />
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/space_normal_plus">
+
+        <TextView
+            android:id="@+id/lbl_title_name"
+            android:layout_width="@dimen/title_width"
+            android:layout_height="wrap_content"
+            android:text="@string/name" />
+
+        <TextView
+            android:id="@+id/lbl_fullname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/lbl_title_name"
+            android:layout_toEndOf="@+id/lbl_title_name"
+            android:layout_toRightOf="@+id/lbl_title_name"
+            android:text="@string/full_name" />
+
+        <TextView
+            android:id="@+id/lbl_title_age"
+            android:layout_width="@dimen/title_width"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/lbl_title_name"
+            android:layout_alignStart="@+id/lbl_title_name"
+            android:layout_below="@+id/lbl_title_name"
+            android:layout_marginTop="@dimen/space_normal_plus"
+            android:text="@string/age" />
+
+        <EditText
+            android:id="@+id/txt_age"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/lbl_title_age"
+            android:layout_alignLeft="@+id/lbl_fullname"
+            android:layout_alignStart="@+id/lbl_fullname"
+            android:ems="3"
+            android:inputType="number" />
+
+        <Button
+            android:id="@+id/btn_add_age1"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/space_tiny"
+            android:layout_alignBaseline="@+id/lbl_title_age"
+            android:layout_toEndOf="@+id/txt_age"
+            android:layout_toRightOf="@+id/txt_age"
+            android:text="@string/plus1" />
+
+        <TextView
+            android:id="@+id/lbl_gender"
+            android:layout_width="@dimen/title_width"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/lbl_title_age"
+            android:layout_alignStart="@+id/lbl_title_age"
+            android:layout_below="@+id/lbl_title_age"
+            android:layout_marginTop="@dimen/space_normal_plus"
+            android:text="@string/gender" />
+
+        <RadioGroup
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/space_negative_small"
+            android:layout_alignTop="@+id/lbl_gender"
+            android:layout_toEndOf="@+id/lbl_gender"
+            android:layout_toRightOf="@+id/lbl_gender"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/rdo_unknown"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:text="@string/unknown" />
+
+            <RadioButton
+                android:id="@+id/rdo_male"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="false"
+                android:text="@string/male" />
+
+            <RadioButton
+                android:id="@+id/rdo_female"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="false"
+                android:text="@string/female" />
+        </RadioGroup>
+
+        <Button
+            android:id="@+id/btn_save"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/lbl_gender"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/space_normal_plus"
+            android:text="@string/save" />
+    </RelativeLayout>
 
 </RelativeLayout>

@@ -2,4 +2,14 @@
     <string name="app_name">Data Binding</string>
 
     <string name="action_about">About</string>
+
+    <string name="name">Name</string>
+    <string name="full_name">Full Name</string>
+    <string name="age">Age</string>
+    <string name="plus1">+1</string>
+    <string name="gender">Gender</string>
+    <string name="unknown">Unknown</string>
+    <string name="male">Male</string>
+    <string name="female">Female</string>
+    <string name="save">Save</string>
 </resources>
