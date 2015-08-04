@@ -12,4 +12,5 @@
     <string name="male">Male</string>
     <string name="female">Female</string>
     <string name="save">Save</string>
+    <string name="employee">Employee</string>
 </resources>

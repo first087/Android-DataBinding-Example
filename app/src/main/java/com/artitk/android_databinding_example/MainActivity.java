@@ -1,16 +1,32 @@
 package com.artitk.android_databinding_example;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AlertDialog;
+import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 
 public class MainActivity extends AppCompatActivity {
 
+    private Employee emp;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        // Sample Data
+        emp = new Employee("Ethan Matthew M", 18, Employee.GenderEnum.UNKNOWN);
+
+        showEmployeeDialog();
+    }
+
+    private void showEmployeeDialog() {
+        new AlertDialog.Builder(this)
+                .setTitle(R.string.employee)
+                .setMessage(emp.toString())
+                .create()
+        .show();
     }
 
     @Override
