@@ -1,117 +1,126 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context=".MainActivity">
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <RelativeLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="@dimen/space_normal_plus"
-        tools:ignore="UselessParent">
+    <data>
 
-        <TextView
-            android:id="@+id/lbl_title_name"
-            android:layout_width="@dimen/title_width"
-            android:layout_height="wrap_content"
-            android:text="@string/name" />
+        <variable
+            name="emp"
+            type="com.artitk.android_databinding_example.Employee" />
+    </data>
 
-        <TextView
-            android:id="@+id/lbl_fullname"
+    <RelativeLayout xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_vertical_margin"
+        tools:context=".MainActivity">
+
+        <RelativeLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignBaseline="@+id/lbl_title_name"
-            android:layout_toEndOf="@+id/lbl_title_name"
-            android:layout_toRightOf="@+id/lbl_title_name"
-            android:text="@string/full_name" />
-
-        <TextView
-            android:id="@+id/lbl_title_age"
-            android:layout_width="@dimen/title_width"
-            android:layout_height="wrap_content"
-            android:layout_alignLeft="@+id/lbl_title_name"
-            android:layout_alignStart="@+id/lbl_title_name"
-            android:layout_below="@+id/lbl_title_name"
-            android:layout_marginTop="@dimen/space_normal_plus"
-            android:text="@string/age" />
-
-        <EditText
-            android:id="@+id/txt_age"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignBaseline="@+id/lbl_title_age"
-            android:layout_alignLeft="@+id/lbl_fullname"
-            android:layout_alignStart="@+id/lbl_fullname"
-            android:ems="3"
-            android:inputType="number"
-            android:maxLength="3" />
-
-        <Button
-            android:id="@+id/btn_add_age1"
-            style="?android:attr/buttonStyleSmall"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignBaseline="@+id/lbl_title_age"
-            android:layout_marginLeft="@dimen/space_tiny"
-            android:layout_marginStart="@dimen/space_tiny"
-            android:layout_toEndOf="@+id/txt_age"
-            android:layout_toRightOf="@+id/txt_age"
-            android:text="@string/plus1" />
-
-        <TextView
-            android:id="@+id/lbl_gender"
-            android:layout_width="@dimen/title_width"
-            android:layout_height="wrap_content"
-            android:layout_alignLeft="@+id/lbl_title_age"
-            android:layout_alignStart="@+id/lbl_title_age"
-            android:layout_below="@+id/lbl_title_age"
-            android:layout_marginTop="@dimen/space_normal_plus"
-            android:text="@string/gender" />
-
-        <RadioGroup
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignTop="@+id/lbl_gender"
-            android:layout_marginTop="@dimen/space_negative_small"
-            android:layout_toEndOf="@+id/lbl_gender"
-            android:layout_toRightOf="@+id/lbl_gender"
-            android:orientation="horizontal">
-
-            <RadioButton
-                android:id="@+id/rdo_unknown"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:checked="true"
-                android:text="@string/unknown" />
-
-            <RadioButton
-                android:id="@+id/rdo_male"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:checked="false"
-                android:text="@string/male" />
-
-            <RadioButton
-                android:id="@+id/rdo_female"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:checked="false"
-                android:text="@string/female" />
-        </RadioGroup>
-
-        <Button
-            android:id="@+id/btn_save"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/lbl_gender"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="@dimen/space_normal_plus"
-            android:text="@string/save" />
-    </RelativeLayout>
+            tools:ignore="UselessParent">
 
-</RelativeLayout>
+            <TextView
+                android:id="@+id/lbl_title_name"
+                android:layout_width="@dimen/title_width"
+                android:layout_height="wrap_content"
+                android:text="@string/name" />
+
+            <TextView
+                android:id="@+id/lbl_fullname"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/lbl_title_name"
+                android:layout_toEndOf="@+id/lbl_title_name"
+                android:layout_toRightOf="@+id/lbl_title_name"
+                android:text="@{emp.name}" />
+
+            <TextView
+                android:id="@+id/lbl_title_age"
+                android:layout_width="@dimen/title_width"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/lbl_title_name"
+                android:layout_alignStart="@+id/lbl_title_name"
+                android:layout_below="@+id/lbl_title_name"
+                android:layout_marginTop="@dimen/space_normal_plus"
+                android:text="@string/age" />
+
+            <EditText
+                android:id="@+id/txt_age"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/lbl_title_age"
+                android:layout_alignLeft="@+id/lbl_fullname"
+                android:layout_alignStart="@+id/lbl_fullname"
+                android:ems="3"
+                android:inputType="number"
+                android:maxLength="3"
+                android:text="@{String.valueOf(emp.age)}" />
+
+            <Button
+                android:id="@+id/btn_add_age1"
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/lbl_title_age"
+                android:layout_marginLeft="@dimen/space_tiny"
+                android:layout_marginStart="@dimen/space_tiny"
+                android:layout_toEndOf="@+id/txt_age"
+                android:layout_toRightOf="@+id/txt_age"
+                android:text="@string/plus1" />
+
+            <TextView
+                android:id="@+id/lbl_gender"
+                android:layout_width="@dimen/title_width"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/lbl_title_age"
+                android:layout_alignStart="@+id/lbl_title_age"
+                android:layout_below="@+id/lbl_title_age"
+                android:layout_marginTop="@dimen/space_normal_plus"
+                android:text="@string/gender" />
+
+            <RadioGroup
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/lbl_gender"
+                android:layout_marginTop="@dimen/space_negative_small"
+                android:layout_toEndOf="@+id/lbl_gender"
+                android:layout_toRightOf="@+id/lbl_gender"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/rdo_unknown"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:text="@string/unknown" />
+
+                <RadioButton
+                    android:id="@+id/rdo_male"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="@string/male" />
+
+                <RadioButton
+                    android:id="@+id/rdo_female"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="@string/female" />
+            </RadioGroup>
+
+            <Button
+                android:id="@+id/btn_save"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/lbl_gender"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/space_normal_plus"
+                android:text="@string/save" />
+        </RelativeLayout>
+    </RelativeLayout>
+</layout>

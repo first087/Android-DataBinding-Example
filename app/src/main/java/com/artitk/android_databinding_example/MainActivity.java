@@ -1,24 +1,49 @@
 package com.artitk.android_databinding_example;
 
+import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
+
+import com.artitk.android_databinding_example.databinding.ActivityMainBinding;
 
 public class MainActivity extends AppCompatActivity {
 
     private Employee emp;
+    private Button btnAddAge1,btnSave;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        ActivityMainBinding binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
+
         // Sample Data
         emp = new Employee("Ethan Matthew M", 18, Employee.GenderEnum.UNKNOWN);
 
-        showEmployeeDialog();
+        binding.setEmp(emp);
+
+        btnAddAge1  = (Button) findViewById(R.id.btn_add_age1);
+        btnSave     = (Button) findViewById(R.id.btn_save);
+
+        btnAddAge1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                emp.setAge(emp.getAge() + 1);
+            }
+        });
+
+        btnSave.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                showEmployeeDialog();
+            }
+        });
     }
 
     private void showEmployeeDialog() {
