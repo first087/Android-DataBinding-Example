@@ -1,6 +1,11 @@
 package com.artitk.android_databinding_example;
 
-public class Employee {
+import android.databinding.BaseObservable;
+import android.databinding.Bindable;
+
+import com.artitk.android_databinding_example.BR;
+
+public class Employee extends BaseObservable {
     private String name;
     private int age;
     private GenderEnum gender;
@@ -17,12 +22,14 @@ public class Employee {
         return name;
     }
 
+    @Bindable
     public int getAge() {
         return age;
     }
 
     public void setAge(int age) {
         this.age = age;
+        notifyPropertyChanged(BR.age);
     }
 
     public GenderEnum getGender() {
