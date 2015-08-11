@@ -9,7 +9,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
-import com.artitk.android_databinding_example.databinding.ActivityMainBinding;
+import com.artitk.android_databinding_example.databinding.MainActivityBinding;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -21,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        ActivityMainBinding binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
+        MainActivityBinding binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
 
         // Sample Data
         emp = new Employee("Ethan Matthew M", 18, Employee.GenderEnum.UNKNOWN);
