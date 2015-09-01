@@ -12,14 +12,12 @@ import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.RadioButton;
-import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
     private Employee emp;
 
-    private TextView lblFullName;
-    private EditText txtAge;
+    private EditText txtFullName, txtAge;
     private RadioButton rdoUnknown, rdoMale, rdoFemale;
     private Button btnAddAge1, btnSave;
 
@@ -31,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
         // Sample Data
         emp = new Employee("Ethan Matthew M", 18, Employee.GenderEnum.UNKNOWN);
 
-        lblFullName = (TextView) findViewById(R.id.lbl_fullname);
+        txtFullName = (EditText) findViewById(R.id.txt_fullname);
         txtAge      = (EditText) findViewById(R.id.txt_age);
         rdoUnknown  = (RadioButton) findViewById(R.id.rdo_unknown);
         rdoMale     = (RadioButton) findViewById(R.id.rdo_male);
@@ -39,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
         btnAddAge1  = (Button) findViewById(R.id.btn_add_age1);
         btnSave     = (Button) findViewById(R.id.btn_save);
 
-        lblFullName.setText(emp.getName());
+        txtFullName.setText(emp.getName());
         txtAge.setText(String.valueOf(emp.getAge()));
 
         switch (emp.getGender()) {
@@ -48,14 +46,25 @@ public class MainActivity extends AppCompatActivity {
             case FEMALE:    rdoFemale.setChecked(true);     break;
         }
 
-        txtAge.addTextChangedListener(new TextWatcher() {
+        txtFullName.addTextChangedListener(new TextWatcher() {
             @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-            }
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) { }
 
             @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
+            public void onTextChanged(CharSequence s, int start, int before, int count) { }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                emp.setName(s.toString());
             }
+        });
+
+        txtAge.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) { }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) { }
 
             @Override
             public void afterTextChanged(Editable s) {
