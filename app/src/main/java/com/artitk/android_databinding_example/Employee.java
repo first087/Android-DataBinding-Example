@@ -22,6 +22,10 @@ public class Employee extends BaseObservable {
         return name;
     }
 
+    public void setName(String name) {
+        this.name = name;
+    }
+
     @Bindable
     public int getAge() {
         return age;

@@ -29,13 +29,14 @@
                 android:layout_height="wrap_content"
                 android:text="@string/name" />
 
-            <TextView
-                android:id="@+id/lbl_fullname"
+            <EditText
+                android:id="@+id/txt_fullname"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignBaseline="@+id/lbl_title_name"
                 android:layout_toEndOf="@+id/lbl_title_name"
                 android:layout_toRightOf="@+id/lbl_title_name"
+                android:inputType="text"
                 android:text="@{emp.name}" />
 
             <TextView
@@ -53,8 +54,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignBaseline="@+id/lbl_title_age"
-                android:layout_alignLeft="@+id/lbl_fullname"
-                android:layout_alignStart="@+id/lbl_fullname"
+                android:layout_alignLeft="@+id/txt_fullname"
+                android:layout_alignStart="@+id/txt_fullname"
                 android:ems="3"
                 android:inputType="number"
                 android:maxLength="3"
