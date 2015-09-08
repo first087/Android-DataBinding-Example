@@ -14,7 +14,6 @@ import com.artitk.android_databinding_example.databinding.MainActivityBinding;
 public class MainActivity extends AppCompatActivity {
 
     private Employee emp;
-    private Button btnAddAge1,btnSave;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,17 +25,14 @@ public class MainActivity extends AppCompatActivity {
 
         binding.setEmp(emp);
 
-        btnAddAge1  = (Button) findViewById(R.id.btn_add_age1);
-        btnSave     = (Button) findViewById(R.id.btn_save);
-
-        btnAddAge1.setOnClickListener(new View.OnClickListener() {
+        binding.btnAddAge1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 emp.setAge(emp.getAge() + 1);
             }
         });
 
-        btnSave.setOnClickListener(new View.OnClickListener() {
+        binding.btnSave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 showEmployeeDialog();
