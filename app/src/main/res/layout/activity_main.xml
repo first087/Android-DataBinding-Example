@@ -1,4 +1,5 @@
-<layout xmlns:android="http://schemas.android.com/apk/res/android">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data class="MainActivityBinding">
 
@@ -37,7 +38,8 @@
                 android:layout_toEndOf="@+id/lbl_title_name"
                 android:layout_toRightOf="@+id/lbl_title_name"
                 android:inputType="text"
-                android:text="@{emp.name}" />
+                android:text="@{emp.name}"
+                app:addTextChangedListener="@{emp.nameWatcher}" />
 
             <TextView
                 android:id="@+id/lbl_title_age"
@@ -59,7 +61,8 @@
                 android:ems="3"
                 android:inputType="number"
                 android:maxLength="3"
-                android:text="@{String.valueOf(emp.age)}" />
+                android:text="@{String.valueOf(emp.age)}"
+                app:addTextChangedListener="@{emp.ageWatcher}" />
 
             <Button
                 android:id="@+id/btn_add_age1"
@@ -97,21 +100,24 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:checked="true"
-                    android:text="@string/unknown" />
+                    android:text="@string/unknown"
+                    app:setOnCheckedChangeListener="@{emp.genderListener}" />
 
                 <RadioButton
                     android:id="@+id/rdo_male"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:checked="false"
-                    android:text="@string/male" />
+                    android:text="@string/male"
+                    app:setOnCheckedChangeListener="@{emp.genderListener}" />
 
                 <RadioButton
                     android:id="@+id/rdo_female"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:checked="false"
-                    android:text="@string/female" />
+                    android:text="@string/female"
+                    app:setOnCheckedChangeListener="@{emp.genderListener}" />
             </RadioGroup>
 
             <Button
