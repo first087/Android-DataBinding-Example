@@ -6,6 +6,10 @@
         <variable
             name="emp"
             type="com.artitk.android_databinding_example.Employee" />
+
+        <variable
+            name="gender"
+            type="com.artitk.android_databinding_example.Employee.GenderEnum" />
     </data>
 
     <RelativeLayout xmlns:tools="http://schemas.android.com/tools"
@@ -99,7 +103,7 @@
                     android:id="@+id/rdo_unknown"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:checked="true"
+                    android:checked="@{emp.gender == gender.UNKNOWN}"
                     android:text="@string/unknown"
                     app:setOnCheckedChangeListener="@{emp.genderListener}" />
 
@@ -107,7 +111,7 @@
                     android:id="@+id/rdo_male"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:checked="false"
+                    android:checked="@{emp.gender == gender.MALE}"
                     android:text="@string/male"
                     app:setOnCheckedChangeListener="@{emp.genderListener}" />
 
@@ -115,7 +119,7 @@
                     android:id="@+id/rdo_female"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:checked="false"
+                    android:checked="@{emp.gender == gender.FEMALE}"
                     android:text="@string/female"
                     app:setOnCheckedChangeListener="@{emp.genderListener}" />
             </RadioGroup>

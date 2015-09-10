@@ -21,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
         MainActivityBinding binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
 
         // Sample Data
-        emp = new Employee("Ethan Matthew M", 18, Employee.GenderEnum.UNKNOWN);
+        emp = new Employee("Ethan Matthew M", 18, Employee.GenderEnum.MALE);
 
         binding.setEmp(emp);
 
