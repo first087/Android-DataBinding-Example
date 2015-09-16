@@ -68,6 +68,7 @@ public class Employee extends BaseObservable {
     public void setAge(int age) {
         this.age = age;
         notifyPropertyChanged(BR.age);
+//        notifyChange(); Use this method when more property change
     }
 
     public GenderEnum getGender() {

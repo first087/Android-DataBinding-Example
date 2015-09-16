@@ -29,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 emp.setAge(emp.getAge() + 1);
+                emp.setGender(Employee.GenderEnum.FEMALE);
             }
         });
 
