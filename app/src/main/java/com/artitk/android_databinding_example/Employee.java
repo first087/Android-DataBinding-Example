@@ -35,7 +35,7 @@ public class Employee extends BaseObservable {
 
             @Override
             public void afterTextChanged(Editable s) {
-                name = s.toString();
+                if (!name.equals(s.toString())) name = s.toString();
             }
         };
     }
@@ -59,7 +59,8 @@ public class Employee extends BaseObservable {
 
             @Override
             public void afterTextChanged(Editable s) {
-                age = s.length() > 0 ? Integer.parseInt(s.toString()) : 0;
+                int newAge = s.length() > 0 ? Integer.parseInt(s.toString()) : 0;
+                if (age != newAge) age = newAge;
             }
         };
     }
