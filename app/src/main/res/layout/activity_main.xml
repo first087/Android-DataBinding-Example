@@ -28,6 +28,7 @@
             android:layout_alignBaseline="@+id/lbl_title_name"
             android:layout_toEndOf="@+id/lbl_title_name"
             android:layout_toRightOf="@+id/lbl_title_name"
+            android:ems="10"
             android:inputType="text"
             android:text="@string/full_name" />
 
